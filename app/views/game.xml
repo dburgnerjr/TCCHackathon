@@ -9,7 +9,8 @@
 			</View>
 		</View>
 		<View id="actionsContainer">
-			<Label>Actions Container</Label>
+			<Button id="btnAttack" title="Attack" />
+			<Button id="btnDefend" title="Defend" />
 		</View>
 	</Window>
 </Alloy>
