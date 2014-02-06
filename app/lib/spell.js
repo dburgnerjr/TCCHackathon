@@ -22,7 +22,7 @@ var DefendSpell = function(){
 	Spell.call(this, "Defend");
 };
 
-DefendSpell.prototype = Object.create(Spell.protype);
+DefendSpell.prototype = Object.create(Spell.prototype);
 DefendSpell.prototype.constructor = DefendSpell;
 
 DefendSpell.prototype.effect = function(user, target) {

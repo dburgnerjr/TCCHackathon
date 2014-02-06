@@ -1,5 +1,6 @@
 ".container" : {
-  backgroundColor: '#000'
+	top: 0,
+  	backgroundColor: '#000'
 },
 "Label": {
 	color: "#fff"
@@ -9,30 +10,44 @@
 	height: "70%",
 	width: Ti.UI.FILL
 },
+".borderRed" : {
+	 borderColor: 'red',
+	 borderWidth: 1
+},
+"#turnContainer": {
+	width: "26.5%",
+	left: -4,
+	top: -4,
+	height: Ti.UI.FILL,
+	backgroundImage: 'images/wallText.png',
+	borderRadius: 4
+},
+"#gameContainer": {
+	right: -4,
+	top: -4,
+	width: '75%',
+	height: Ti.UI.FILL,
+	backgroundImage: 'images/floorText.png',
+	borderRadius: 4
+}
 "#actionsContainer": {
-	bottom: 0,
+	bottom: -4,
+	left: -4,
+	right: -4,
 	height: "30%",
 	width: Ti.UI.FILL,
 	backgroundColor: '#333',
-	
+	layout: 'vertical'
 },
 "#btnAttack": {
-		top: 10,
-		left: 15,
-		height: "40%",
-		width: "80%",
-		backgroundColor: "#222"
+	top: 10,
+	height: "40%",
+	width: "80%",
+	backgroundColor: "#222"
 },
 "#btnDefend": {
-		top: "50%",
-		left: 15,
-		height: "40%",
-		width: "80%",
-		backgroundColor: "#444"
-},
-"#turnOrder": {
-	width: "20%",
-	left: 0,
-	height: Ti.UI.FILL,
-	backgroundColor: 'red'
+	top: "10",
+	height: "40%",
+	width: "80%",
+	backgroundColor: "#444"
 }
