@@ -7,38 +7,22 @@
 "Button": {
 	color: "#fff"
 },
-".topContainer": {
-	top: 0,
-	height: "70%",
-	width: Ti.UI.FILL
-},
-".borderRed" : {
-	 borderColor: 'red',
-	 borderWidth: 1
-},
-"#turnContainer": {
-	width: "26.5%",
-	left: -4,
-	top: -4,
-	height: Ti.UI.FILL,
-	backgroundImage: 'images/wallText.png',
-	borderRadius: 4
-},
 "#gameContainer": {
-	right: -4,
-	top: -4,
-	width: '75%',
-	height: Ti.UI.FILL,
+	height: "69%",
+	width: Ti.UI.FILL,
 	backgroundImage: 'images/floorText.png',
-	borderRadius: 4
+},
+"#sep": {
+	height: "1%",
+	width: '101%',
+	borderColor: 'red',
+	borderWidth: 1
 }
 "#actionsContainer": {
-	bottom: -4,
-	left: -4,
-	right: -4,
+	bottom: 0,
 	height: "30%",
 	width: Ti.UI.FILL,
-	backgroundColor: '#333',
+	backgroundImage: 'images/wallText.png',
 	layout: 'vertical'
 },
 "#btnAttack": {
@@ -46,18 +30,14 @@
 		left: 15,
 		height: "40%",
 		width: "90%",
-		backgroundColor: "#222"
+		backgroundColor: "transparent",
+		backgroundImage: "images/attackBtn.jpg"
 },
 "#btnDefend": {
 		top: "10",
 		left: 15,
 		height: "40%",
 		width: "90%",
-		backgroundColor: "#444"
-},
-"#turnOrder": {
-	width: "20%",
-	left: 0,
-	height: Ti.UI.FILL,
-	backgroundColor: 'red'
+		backgroundColor: "transparent",
+		backgroundImage: "images/defendBtn.jpg"
 }
