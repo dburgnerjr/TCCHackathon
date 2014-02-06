@@ -1,5 +1,8 @@
 function doClick(e) {
-    alert($.label.text);
+    alert(e.source.title);
+    if (e.source.title == "Quit")
+    	$.win.close();
 }
 
-$.index.open();
+$.win.open();
+

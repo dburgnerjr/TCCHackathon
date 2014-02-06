@@ -1,6 +1,7 @@
 function Controller() {
-    function doClick() {
-        alert($.label.text);
+    function doClick(e) {
+        alert(e.source.title);
+        "Quit" == e.source.title && $.win.close();
     }
     require("alloy/controllers/BaseController").apply(this, Array.prototype.slice.call(arguments));
     this.__controllerPath = "index";
@@ -10,24 +11,44 @@ function Controller() {
     var $ = this;
     var exports = {};
     var __defers = {};
-    $.__views.index = Ti.UI.createWindow({
+    $.__views.win = Ti.UI.createWindow({
+        id: "win",
         backgroundColor: "white",
-        id: "index"
+        fullscreen: "true"
     });
-    $.__views.index && $.addTopLevelView($.__views.index);
-    $.__views.label = Ti.UI.createLabel({
+    $.__views.win && $.addTopLevelView($.__views.win);
+    $.__views.TCCHackathon = Ti.UI.createLabel({
         width: Ti.UI.SIZE,
         height: Ti.UI.SIZE,
         color: "#000",
-        text: "Hello, World",
-        id: "label"
+        text: "TCC Hackathon",
+        id: "TCCHackathon",
+        top: "10"
     });
-    $.__views.index.add($.__views.label);
-    doClick ? $.__views.label.addEventListener("click", doClick) : __defers["$.__views.label!click!doClick"] = true;
+    $.__views.win.add($.__views.TCCHackathon);
+    $.__views.newgame = Ti.UI.createButton({
+        id: "newgame",
+        title: "New Game",
+        top: "50",
+        width: "200",
+        height: "50"
+    });
+    $.__views.win.add($.__views.newgame);
+    doClick ? $.__views.newgame.addEventListener("click", doClick) : __defers["$.__views.newgame!click!doClick"] = true;
+    $.__views.quit = Ti.UI.createButton({
+        id: "quit",
+        title: "Quit",
+        top: "110",
+        width: "200",
+        height: "50"
+    });
+    $.__views.win.add($.__views.quit);
+    doClick ? $.__views.quit.addEventListener("click", doClick) : __defers["$.__views.quit!click!doClick"] = true;
     exports.destroy = function() {};
     _.extend($, $.__views);
-    $.index.open();
-    __defers["$.__views.label!click!doClick"] && $.__views.label.addEventListener("click", doClick);
+    $.win.open();
+    __defers["$.__views.newgame!click!doClick"] && $.__views.newgame.addEventListener("click", doClick);
+    __defers["$.__views.quit!click!doClick"] && $.__views.quit.addEventListener("click", doClick);
     _.extend($, exports);
 }
 

@@ -1,5 +1,10 @@
 <Alloy>
-	<Window class="container">
-		<Label id="label" onClick="doClick">Hello, World</Label>
-	</Window>
+    <!-- Create a heavyweight window to use the Android menu. -->
+    <Window id="win" backgroundColor="white" fullscreen="true">
+       <Label id="TCCHackathon" top="10">TCC Hackathon</Label>
+       <Button id="newgame" onClick="doClick" title="New Game" 
+       	top="50" width="200" height="50" />
+       <Button id="quit" onClick="doClick" title="Quit" 
+       	top="110" width="200" height="50" />
+    </Window>
 </Alloy>
