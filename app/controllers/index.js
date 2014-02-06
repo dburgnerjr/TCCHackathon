@@ -3,10 +3,9 @@ $.btnNewGame.addEventListener('click', function(e){
 	Alloy.createController('characterCreation').getView().open();
 });
 
-function quitGameClick(e)
-{
+$.btnExit.addEventListener('click', function(e){
 	$.index.close();
-}
+});
 
-$.win.open();
+$.index.open();
 

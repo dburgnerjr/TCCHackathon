@@ -2,3 +2,18 @@
 ".container" : {
   backgroundColor: 'brown'
 }
+"Button": {
+	width: 100,
+	height: 40,,
+	backgroundColor: 'red',
+	borderRadius: 5,
+	color: "#fff"
+},
+"#btnLaunch": {
+	bottom: 175,
+	right: 20 
+},
+"#btnCancel": {
+	bottom: 125,
+	right: 20 
+}
