@@ -1,5 +1,7 @@
 <Alloy>
-	<Window class="container">
-		<Label id="label" onClick="doClick">Hello, World</Label>
+	<Window class="mainMenu" exitOnClose="true">
+		<Label id="titleLabel">TCC Hackathon</Label>
+		<Button id="newGameButton" onClick="newGameClick" title="New Game" />
+		<Button id="quitGameButton" onClick="quitGameClick" title="Quit Game" />
 	</Window>
 </Alloy>

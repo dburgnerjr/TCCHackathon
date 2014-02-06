@@ -1,8 +1,17 @@
-".container": {
-	backgroundColor:"white"
+".mainMenu": {
+	backgroundColor:"gray"
 },
-"Label": {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	color: "#000"
-} 
+"#titleLabel": {
+	top: 150,
+	color:'#999'
+},
+"#newGameButton" : {
+	width: 150,
+	height: 50,
+	top: 225
+},
+"#quitGameButton" : {
+	width: 150,
+	height: 50,
+	top:325
+}
