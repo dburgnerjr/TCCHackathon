@@ -1,6 +1,6 @@
 <Alloy>
 	<Window class="container">
 		<Button id="btnNewGame" title="New Game"></Button>
-		<Button id="btnExit" title="Exit"></Button>
+		<!-- <Button id="btnExit" title="Exit"></Button> -->
 	</Window>
 </Alloy>
