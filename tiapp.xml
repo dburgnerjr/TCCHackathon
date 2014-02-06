@@ -47,7 +47,10 @@
         </splash>
         <theme>default</theme>
     </mobileweb>
-    <modules/>
+    <modules>
+        <module platform="android">co.lanica.platino</module>
+        <module platform="iphone">co.lanica.platino</module>
+    </modules>
     <deployment-targets>
         <target device="iphone">false</target>
         <target device="ipad">false</target>
