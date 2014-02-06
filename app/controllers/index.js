@@ -1,7 +1,10 @@
 
 $.btnNewGame.addEventListener('click', function(e){
-	Alloy.createController('game',"Steve").getView().open();
+	Alloy.createController('characterCreation').getView().open();
 });
-
+/*
+$.btnExit.addEventListener('click', function(e){
+	$.index.close();
+});
+*/
 $.index.open();
-

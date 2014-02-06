@@ -1,5 +1,3 @@
-var Entity = require('entity');
-
 function Spell(name){
 	this.name = name;
 }
@@ -14,7 +12,7 @@ AttackSpell.prototype = Object.create(Spell.prototype);
 AttackSpell.prototype.constructor = AttackSpell;
 
 AttackSpell.prototype.effect = function(user, target) {
-	target.health -= user.attack - target.defense;
+	target.health -= user.power - target.defense;
 	alert(user.name + "attacked.");
 };
 

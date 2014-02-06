@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class="container">
+	<Window class="container" exitOnClose="true">
 		<Button id="btnNewGame" title="New Game"></Button>
 		<!-- <Button id="btnExit" title="Exit"></Button> -->
 	</Window>
