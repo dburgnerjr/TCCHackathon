@@ -1,5 +1,5 @@
 <Alloy>
-	<Window class="characterCreation">
+	<Window class="container">
 		<TextField id="nameField"></TextField>
 	</Window>
 </Alloy>

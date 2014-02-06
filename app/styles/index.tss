@@ -1,17 +1,19 @@
-".mainMenu": {
-	backgroundColor:"gray"
+".container": {
+	backgroundColor:"white",
+	backgroundImage: 'images/gameBG.jpg'
 },
-"#titleLabel": {
-	top: 150,
-	color:'#999'
+"Button": {
+	width: 100,
+	height: 40,,
+	backgroundColor: 'red',
+	borderRadius: 5,
+	color: "#fff"
 },
-"#newGameButton" : {
-	width: 150,
-	height: 50,
-	top: 225
+"#btnNewGame": {
+	bottom: 175,
+	right: 20 
 },
-"#quitGameButton" : {
-	width: 150,
-	height: 50,
-	top:325
+"#btnExit": {
+	bottom: 125,
+	right: 20 
 }

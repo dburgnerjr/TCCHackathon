@@ -1,7 +1,6 @@
-function newGameClick(e)
-{
+$.btnNewGame.addEventListener('click', function(e){
 	Alloy.createController('characterCreation').getView().open();
-}
+});
 
 function quitGameClick(e)
 {
