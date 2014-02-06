@@ -1,6 +1,7 @@
 ".container": {
 	backgroundColor:"white",
-	backgroundImage: 'images/gameBG.jpg'
+	backgroundImage: 'images/gameBG.jpg',
+	exitOnClose: true
 },
 "Button": {
 	width: 100,
@@ -12,8 +13,9 @@
 "#btnNewGame": {
 	bottom: 175,
 	right: 20 
-},
-"#btnExit": {
+}
+/*"#btnExit": {
 	bottom: 125,
 	right: 20 
 }
+*/
