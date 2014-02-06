@@ -1,7 +1,11 @@
-function doClick(e) {
-    alert(e.source.title);
-    if (e.source.title == "Quit")
-    	$.win.close();
+
+$.btnNewGame.addEventListener('click', function(e){
+	Alloy.createController('characterCreation').getView().open();
+});
+
+function quitGameClick(e)
+{
+	$.index.close();
 }
 
 $.win.open();

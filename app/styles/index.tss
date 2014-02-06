@@ -1,8 +1,19 @@
 ".container": {
-	backgroundColor:"white"
+	backgroundColor:"white",
+	backgroundImage: 'images/gameBG.jpg'
 },
-"Label": {
-	width: Ti.UI.SIZE,
-	height: Ti.UI.SIZE,
-	color: "#000"
-} 
+"Button": {
+	width: 100,
+	height: 40,,
+	backgroundColor: 'red',
+	borderRadius: 5,
+	color: "#fff"
+},
+"#btnNewGame": {
+	bottom: 175,
+	right: 20 
+},
+"#btnExit": {
+	bottom: 125,
+	right: 20 
+}

@@ -1,0 +1,24 @@
+
+".container" : {
+  backgroundColor: '#000'
+},
+"Label": {
+	color: "#fff"
+}
+".topContainer": {
+	top: 0,
+	height: "75%",
+	width: Ti.UI.FILL
+}
+"#actionsContainer": {
+	bottom: 0,
+	height: "25%",
+	width: Ti.UI.FILL,
+	backgroundColor: '#333'
+}
+"#turnOrder": {
+	width: "20%",
+	left: 0,
+	height: Ti.UI.FILL,
+	backgroundColor: 'red'
+}
