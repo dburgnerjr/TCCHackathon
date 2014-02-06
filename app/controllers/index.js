@@ -4,4 +4,3 @@ $.btnNewGame.addEventListener('click', function(e){
 });
 
 $.index.open();
-
