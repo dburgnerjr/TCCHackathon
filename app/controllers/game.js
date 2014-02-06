@@ -6,20 +6,26 @@ var Spells = require('spell');
 var player = new Entity(args);
 var enemy = new Entity("Evil guy");
 
-function onAttackClick(){
+function onAttackClick(e){
+	
+	e.source.backgroundImage = "images/attackPrs.jpg";
 	
 	player.attack(enemy);
 	
-	setTimeout(500);
-	enemyTurn();
+	e.source.backgroundImage = "images/attackBtn.jpg";
+	
+	setTimeout(enemyTurn, 500);
 }
 
-function onDefendClick(){
+function onDefendClick(e){
+	
+	e.source.backgroundImage = "images/defendPrs.jpg";
 	
 	player.defend();
 	
-	setTimeout(500);	
-	enemyTurn();
+	e.source.backgroundImage = "images/defendBtn.jpg";
+	
+	setTimeout(enemyTurn, 500);
 }
 
 function enemyTurn(){

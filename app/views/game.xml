@@ -1,16 +1,13 @@
 <Alloy>
 	<Window class="container">
 		<View class="topContainer">
-			<View id="turnOrder">
-				<Label>Turn Order</Label>
-			</View>
 			<View id="gameArea">
 				<Label>Game Area</Label>
 			</View>
 		</View>
 		<View id="actionsContainer">
-			<Button id="btnAttack" title="Attack" />
-			<Button id="btnDefend" title="Defend" />
+			<Button id="btnAttack" />
+			<Button id="btnDefend" />
 		</View>
 	</Window>
 </Alloy>

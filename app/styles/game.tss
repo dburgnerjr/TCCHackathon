@@ -1,4 +1,4 @@
-".container" : {
+".container": {
   backgroundColor: '#000',
   backgroundImage: "images/uiDivider.jpg"
 },
@@ -13,11 +13,14 @@
 	height: "70%",
 	width: Ti.UI.FILL
 },
+"#gameArea": {
+	backgroundImage: "images/floorText.png"
+},
 "#actionsContainer": {
 	bottom: 0,
 	height: "30%",
 	width: Ti.UI.FILL,
-	backgroundColor: '#333',
+	backgroundColor: 'transparent',
 	
 },
 "#btnAttack": {
@@ -25,18 +28,14 @@
 		left: 15,
 		height: "40%",
 		width: "90%",
-		backgroundColor: "transparent"
+		backgroundColor: "transparent",
+		backgroundImage: "images/attackBtn.jpg"
 },
 "#btnDefend": {
 		top: "50%",
 		left: 15,
 		height: "40%",
 		width: "90%",
-		backgroundColor: "transparent"
-},
-"#turnOrder": {
-	width: "20%",
-	left: 0,
-	height: Ti.UI.FILL,
-	backgroundColor: 'red'
+		backgroundColor: "transparent",
+		backgroundImage: "images/defendBtn.jpg"
 }

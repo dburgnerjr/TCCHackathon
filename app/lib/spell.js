@@ -13,7 +13,7 @@ AttackSpell.prototype.constructor = AttackSpell;
 
 AttackSpell.prototype.effect = function(user, target) {
 	target.health -= user.power - target.defense;
-	alert(user.name + "attacked.");
+	alert(user.name + " attacked.");
 };
 
 var DefendSpell = function(){
@@ -25,7 +25,7 @@ DefendSpell.prototype.constructor = DefendSpell;
 
 DefendSpell.prototype.effect = function(user, target) {
 	user.defense *= 2;
-	alert(user.name + "defended.");
+	alert(user.name + " defended.");
 };
 
 exports.AttackSpell = AttackSpell;
