@@ -1,9 +1,13 @@
 ".container" : {
-  backgroundColor: '#000'
+  backgroundColor: '#000',
+  backgroundImage: "images/uiDivider.jpg"
 },
 "Label": {
 	color: "#fff"
-}
+},
+"Button": {
+	color: "#fff"
+},
 ".topContainer": {
 	top: 0,
 	height: "70%",
@@ -20,15 +24,15 @@
 		top: 10,
 		left: 15,
 		height: "40%",
-		width: "80%",
-		backgroundColor: "#222"
+		width: "90%",
+		backgroundColor: "transparent"
 },
 "#btnDefend": {
 		top: "50%",
 		left: 15,
 		height: "40%",
-		width: "80%",
-		backgroundColor: "#444"
+		width: "90%",
+		backgroundColor: "transparent"
 },
 "#turnOrder": {
 	width: "20%",

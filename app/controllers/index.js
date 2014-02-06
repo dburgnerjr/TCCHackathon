@@ -8,4 +8,3 @@ $.btnExit.addEventListener('click', function(e){
 });
 */
 $.index.open();
-
