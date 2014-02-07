@@ -129,7 +129,6 @@ function Reset()
 	
 	//Update table
 	$.skillList.data = data;
-	Ti.API.info('enemydesc', enemies[currentEnemyIndex].description);
 	$.jobTitle.text = enemies[currentEnemyIndex].name;
 	$.employerTitle.text = enemies[currentEnemyIndex].employer;
 	$.jobLocation.text = enemies[currentEnemyIndex].city + ", " + enemies[currentEnemyIndex].state;
@@ -159,7 +158,6 @@ $.skillList.addEventListener('click', function(e){
 	});
 	$.btnPickSkill.title = e.row.title;
 	$.btnAttack.touchEnabled = true;
-	$.btnAttack.backgroundColor = 'red';
 	currentRow = e.row;
 });
 $.btnAttack.addEventListener('click', onAttackClick);

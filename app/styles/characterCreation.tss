@@ -1,17 +1,19 @@
 ".container" : {
   backgroundColor: 'brown',
+  backgroundImage: '/images/ceilingText.png',
   navBarHidden: true
 },
 "Button": {
 	width: 100,
 	height: 40,
-	backgroundColor: 'red',
 	borderRadius: 5,
-	color: "#fff"
+	color: "#fff",
+	backgroundImage: '/images/blankBtn.png',
+	backgroundSelectedImage: '/images/blankPrs.png'
 },
 "#btnLaunch": {
 	bottom: 175,
-	right: 20 
+	right: 20,
 },
 "#btnCancel": {
 	bottom: 125,
