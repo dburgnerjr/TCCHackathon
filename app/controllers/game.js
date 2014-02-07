@@ -32,7 +32,6 @@ function loadEnemies() {
 }
  
 function onAttackClick(e){
-<<<<<<< HEAD
 	var result = player.useSkill(e.row.title);
 	//Successful attack
 	if(result > 0)
@@ -44,27 +43,15 @@ function onAttackClick(e){
 	{
 		SkillUnsuccessful();
 	}
-=======
-	
-	e.source.backgroundImage = "images/attackPrs.jpg";
-	
-	//player.attack(enemy);
-	
-	setTimeout(enemyTurn, 500);
->>>>>>> 0a59d56470aea6ce1a8424c5bd58a5e0387894c1
 }
 
 function SkillSuccessful(){
 	
 }
 
-<<<<<<< HEAD
+
 function SkillUnsuccessful(){
 	
-=======
-function enemyTurn(){
-	//enemy.act(player);
->>>>>>> 0a59d56470aea6ce1a8424c5bd58a5e0387894c1
 }
 
 $.btnPickSkill.addEventListener('click', function(e){
@@ -83,8 +70,3 @@ $.skillList.addEventListener('click', function(e){
 	$.btnAttack.backgroundColor = 'red';
 });
 $.btnAttack.addEventListener('click', onAttackClick);
-<<<<<<< HEAD
-=======
-//$.btnDefend.addEventListener('click', onDefendClick);
-$.pb.show();
->>>>>>> 0a59d56470aea6ce1a8424c5bd58a5e0387894c1
