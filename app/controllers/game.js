@@ -7,15 +7,11 @@ var player = args;
 
 var enemies = [];
 
+var currentEnemyIndex = -1,
+	numHearts = 0,
+	numSkulls = 0;
+
 loadEnemies();
-
-var currentEnemyIndex = 0;
-var numHearts = 0;
-var numSkulls = 0;
-
-Reset();
-
-Ti.API.info("Enemies\n", enemies);
 
 function loadEnemies() {
 	var url = "https://quasar-9.herokuapp.com/api/v1/job_postings?auth_token=1pSst1P7LAQBzNGc2bgW&site_of_origin=EG&q=java&employer_id=1526";
@@ -26,9 +22,10 @@ function loadEnemies() {
     	     enemies = [];
     	     for (var i = 0; i < json.job_postings.length; i++) {
     	     	var enemy = new Entity.Enemy(json.job_postings[i]);
-    	     	Ti.API.info("Enemy:\n", enemy.name);
     	     	enemies.push(enemy);
     	     }
+    	     
+    	     Reset();
 	     },
     	 // function called when an error occurs, including a timeout
 	     onerror : function(e) {
@@ -109,6 +106,9 @@ function Reset()
 	});
 	//Update table
 	$.skillList.data = data;
+	$.jobTitle.text = enemies[currentEnemyIndex].name;
+	$.employerTitle.text = enemies[currentEnemyIndex].employer;
+	$.jobLocation.text = enemies[currentEnemyIndex].city + ", " + enemies[currentIndex].state;
 }
 
 $.btnPickSkill.addEventListener('click', function(e){

@@ -4,6 +4,7 @@
 			<View id="jobCard" layout="vertical">
 				<Label id="jobTitle">Software Engineer II</Label>
 				<Label id="employerTitle">ForRent.Com</Label>
+				<Label id="jobLocation">Norfolk, VA</Label>
 			</View>
 		</View>
 		<View id="sep" />

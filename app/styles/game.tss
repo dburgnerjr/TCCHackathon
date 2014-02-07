@@ -93,3 +93,11 @@
 	top: 5,
 	color:"#109273" 
 }
+"#jobLocation" :{
+	font: {
+		fontSize: 16,
+		fontWeight: 'semibold'
+	},
+	top: 15,
+	color: "#109273"
+}
