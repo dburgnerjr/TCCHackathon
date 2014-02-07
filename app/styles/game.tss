@@ -93,3 +93,13 @@
 	top: 5,
 	color:"#109273" 
 }
+"#hearts" :{
+	backgroundColor: '#eee',
+	bottom:  0,
+	height: 30
+},
+".heart" :{
+	image:  '/images/heartEmpty.png',
+	height:  30,
+	width:  30
+}
