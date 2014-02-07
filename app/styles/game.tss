@@ -50,7 +50,8 @@
 	top: "70%",
 	height: "69%",
 	zIndex: 10,
-	backgroundColor: "#FFF"
+	backgroundColor: "#FFF",
+	color: '#000'
 }
 //Job card
 "#jobCard" : {
@@ -103,6 +104,15 @@
 	height: 30,
 	width:  Ti.UI.SIZE,
 	layout: 'horizontal'
+}
+"#backButton":{
+	font: {
+		fontSize: 16,
+	},
+	left: 10,
+	top: 20,
+	backgroundImage: '',
+	backgroundSelectedImage: ''
 }
 "#availLbl":{
 	font: {

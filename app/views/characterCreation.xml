@@ -4,7 +4,9 @@
 		<TextField id="searchField" hintText="Job Keyword"></TextField>
 		<Label id="skillsLbl">Skills List (CSV)</Label>
 		<TextArea id="skillsField"></TextArea>
-		<Button id="btnLaunch" title="New Game" />
-		<Button id="btnCancel" title="Cancel" />
+		<View class="buttonWrapper">
+			<Button id="btnLaunch" title="New Game" />
+			<Button id="btnCancel" title="Cancel" />
+		</View>
 	</Window>
 </Alloy>

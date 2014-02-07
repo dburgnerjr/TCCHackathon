@@ -1,0 +1,63 @@
+"#overlay[platform=android]": {
+	zIndex: 9999,
+	exitOnClose: false
+},
+"#background": {
+    width: "auto",
+    height: "auto",
+    left: 0,
+    top: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: "#555",
+    opacity: 0.4
+},
+"#content": {
+    width: 300,
+    height: 200,
+    backgroundColor: "#fff",
+    borderRadius: 5,
+    borderColor: '#fff'
+},
+".wrapper": {
+	top: 0,
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+    layout: 'vertical'
+},
+"Label[platform=android]": {
+	color: 'black'
+},
+"#heading": {
+	top: 10,
+    left: 20,
+    right: 20,
+    height: Ti.UI.SIZE,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    font: Alloy.Globals.theme.H4Font
+}
+"#text": {
+    left: 30,
+    right: 30,
+    height: Ti.UI.SIZE,
+    textAlign: Ti.UI.TEXT_ALIGNMENT_CENTER,
+    font: Alloy.Globals.theme.BodyFont
+}
+"#starwidget": {
+	top: 20
+}
+".sep": {
+	width: Ti.UI.FILL,
+	height: 41,
+	bottom: 0,
+	backgroundColor: Alloy.Globals.theme.ForRent.borderGrey
+}
+"#cancelButton": {
+	width: Ti.UI.FILL,
+    height: 40,
+   	bottom: 0,
+	font: Alloy.Globals.theme.H4Font,
+    color: Alloy.Globals.theme.ForRent.midBlue,
+    selectedColor: Alloy.Globals.theme.ForRent.darkGrey,
+    backgroundColor: 'white'
+}

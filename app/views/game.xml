@@ -1,6 +1,7 @@
 <Alloy>
 	<Window class="container">
 		<View id="gameContainer">
+			<Button id="backButton" title="< Back"></Button>
 			<View id="postingstats">
 				<Label id="availLbl">Available Jobs: </Label>
 				<Label id="availableJobs"></Label>

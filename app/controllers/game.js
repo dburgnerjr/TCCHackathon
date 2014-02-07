@@ -186,3 +186,10 @@ $.btnSkipJob.addEventListener('click', function(e){
 	}
 	
 });
+
+if(player.achievments.length === 0) {
+	Alloy.createController('achievementDialog').getView().open();
+}
+$.backButton.addEventListener('click', function(e){
+	$.game.close();
+});

@@ -4,16 +4,12 @@
   navBarHidden: true
 },
 "Button": {
-	width: 100,
+	width: 120,
 	height: 40,
 	borderRadius: 5,
 	color: "#fff",
 	backgroundImage: '/images/blankBtn.png',
 	backgroundSelectedImage: '/images/blankPrs.png'
-},
-"#btnLaunch": {
-	bottom: 175,
-	right: 20,
 },
 "#skillsLbl": {
 	top: 20,
@@ -25,9 +21,15 @@
 	width: "90%",
 	height: 120,
 },
+
+"#btnLaunch": {
+	top: 10,
+	left: 20,
+},
 "#btnCancel": {
-	bottom: 125,
-	right: 20 
+	top: 10,
+	right: 20,
+	left: 20 
 }
 "TextField": {
 	
@@ -38,4 +40,10 @@
 }
 "TextField[platform:ios]": {
 	backgroundColor: 'white'
+}
+".buttonWrapper": {
+	top: 40,
+	height: 60,
+	width: Ti.UI.FILL,
+	layout: 'horizontal'
 }

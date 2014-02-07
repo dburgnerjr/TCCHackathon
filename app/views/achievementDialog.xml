@@ -1,0 +1,14 @@
+<Alloy>
+    <Window id="overlay">
+        <View id="background" />
+        <View id="content">
+        	<View class="wrapper">
+	            <Label id="heading">Noob Alert</Label>
+	            <Label id="text">How would you rate your experience using this app?</Label>
+            </View>
+            <View class="sep">
+            	<Button id="cancelButton">Not Now</Button>	
+            </View>    
+        </View>
+    </Window>
+</Alloy>
