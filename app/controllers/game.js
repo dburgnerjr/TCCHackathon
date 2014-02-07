@@ -4,17 +4,6 @@ var animation = require('alloy/animation');
 var Entity = require('entity');
 
 var player = args;
-Ti.API.info(player.skills);
-var data = [];
-//Iterate player skills and create table rows
-_.each(player.skills, function(skill){
-	var row = Ti.UI.createTableViewRow({
-		title: skill
-	});
-	data.push(row);
-});
-//Update table
-$.skillList.data = data;
 
 var enemies = [];
 
@@ -24,14 +13,21 @@ var currentEnemyIndex = 0;
 var numHearts = 0;
 var numSkulls = 0;
 
+Reset();
+
+Ti.API.info("Enemies\n", enemies);
+
 function loadEnemies() {
 	var url = "https://quasar-9.herokuapp.com/api/v1/job_postings?auth_token=1pSst1P7LAQBzNGc2bgW&site_of_origin=EG&q=java&employer_id=1526";
 	var client = Ti.Network.createHTTPClient({
     	 // function called when the response data is available
 	     onload : function(e) {
     	     var json = JSON.parse(this.responseText);
+    	     enemies = [];
     	     for (var i = 0; i < json.job_postings.length; i++) {
-    	     	enemies.push(new Entity.Enemy(json.job_postings[i]));
+    	     	var enemy = new Entity.Enemy(json.job_postings[i]);
+    	     	Ti.API.info("Enemy:\n", enemy.name);
+    	     	enemies.push(enemy);
     	     }
 	     },
     	 // function called when an error occurs, including a timeout
@@ -46,6 +42,7 @@ function loadEnemies() {
 	 // Send the request.
 	 client.send();
 }
+
 function resetButtons () {
 	$.btnAttack.touchEnabled = false;
 	$.btnAttack.backgroundColor = "#999";
@@ -55,6 +52,7 @@ function resetButtons () {
 function onAttackClick(e){
 	animation.shake($.jobCard);
 	var result = player.useSkill($.btnPickSkill.title, enemies[currentEnemyIndex]);
+	
 	if(result > 0)
 	{
 		SkillSuccessful();
@@ -92,7 +90,7 @@ function SkillUnsuccessful(){
 
 function EnemyVictory(){
 	//Do stuff if player is defeated.
-	//Show URL for player to view description?
+	//Show URL for player to view job description?
 }
 
 function Reset()
@@ -101,6 +99,16 @@ function Reset()
 	numSkulls = 0;
 	numHearts = 0;
 	
+	var data = [];
+	//Iterate player skills and create table rows
+	_.each(player.skills, function(skill){
+		var row = Ti.UI.createTableViewRow({
+			title: skill
+		});
+		data.push(row);
+	});
+	//Update table
+	$.skillList.data = data;
 }
 
 $.btnPickSkill.addEventListener('click', function(e){
@@ -117,5 +125,6 @@ $.skillList.addEventListener('click', function(e){
 	$.btnPickSkill.title = e.row.title;
 	$.btnAttack.touchEnabled = true;
 	$.btnAttack.backgroundColor = 'red';
+	$.skillList.remove(e.row);
 });
 $.btnAttack.addEventListener('click', onAttackClick);
