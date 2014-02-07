@@ -4,13 +4,8 @@ var Entity = require('entity');
 var Spells = require('spell');
 
 var player = new Entity(args);
-<<<<<<< HEAD
+
 var enemies = [];
-=======
-player.addSpell(Spells.ThrowResumeSpell);
-var enemy = new Entity("Evil guy");
-player.addSpell(Spells.ThrowApplicationSpell);
->>>>>>> b5cccc4b2dcc961637078e4febdd6e584b3ab4bf
 
 function loadEnemies() {
 	var url = "https://quasar-9.herokuapp.com/api/v1/job_postings?auth_token=1pSst1P7LAQBzNGc2bgW&site_of_origin=EG&q=java&employer_id=1526";
@@ -36,14 +31,10 @@ function loadEnemies() {
 }
  
 function onAttackClick(e){
-<<<<<<< HEAD
 	
 	e.source.backgroundImage = "images/attackPrs.jpg";
 	
 	//player.attack(enemy);
-=======
-	player.attack(enemy);
->>>>>>> b5cccc4b2dcc961637078e4febdd6e584b3ab4bf
 	
 	setTimeout(enemyTurn, 500);
 }
