@@ -1,4 +1,5 @@
 var args = arguments[0] || {};
+var animation = require('alloy/animation');
 
 var Entity = require('entity');
 var Spells = require('spell');
@@ -9,20 +10,28 @@ var enemy = new Entity("Evil guy");
 player.addSpell(Spells.ThrowApplicationSpell);
 
 function onAttackClick(e){
-	player.attack(enemy);
+	animation.shake($.jobCard);
+	resetButtons();
+	//player.attack(enemy);
 	
-	setTimeout(enemyTurn, 500);
+	//setTimeout(enemyTurn, 500);
 }
 
 function onDefendClick(e){
 	
-	e.source.backgroundImage = "images/defendPrs.jpg";
+	e.source.backgroundImage = "/images/defendPrs.jpg";
 	
 	player.defend();
 	
-	e.source.backgroundImage = "images/defendBtn.jpg";
+	e.source.backgroundImage = "/images/defendBtn.jpg";
 	
 	setTimeout(enemyTurn, 500);
+}
+
+function resetButtons () {
+	$.btnAttack.touchEnabled = false;
+	$.btnAttack.backgroundColor = "#999";
+	$.btnPickSkill.title = "Pick a Skill";
 }
 
 function enemyTurn(){
@@ -45,4 +54,3 @@ $.skillList.addEventListener('click', function(e){
 });
 $.btnAttack.addEventListener('click', onAttackClick);
 //$.btnDefend.addEventListener('click', onDefendClick);
-$.pb.show();

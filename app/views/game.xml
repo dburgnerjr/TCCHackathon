@@ -1,7 +1,10 @@
 <Alloy>
 	<Window class="container">
 		<View id="gameContainer">
-			<ProgressBar id="pb" min="0" max="10" value="5" />
+			<View id="jobCard" layout="vertical">
+				<Label id="jobTitle">Software Engineer II</Label>
+				<Label id="employerTitle">ForRent.Com</Label>
+			</View>
 		</View>
 		<View id="sep" />
 		<View id="actionsContainer">
