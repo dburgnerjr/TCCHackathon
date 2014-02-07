@@ -228,14 +228,15 @@ var OAuthAdapter = function(pConsumerSecret, pConsumerKey, pSignatureMethod)
         var pattern = /<div class=\"access-code\">([0-9]+)<\/div>/;
         var tagSearch = htmlDocument.match(pattern);
         Ti.API.info(tagSearch);
-        if(tagSearch.length > 0) {
+        if(tagSearch && tagSearch.length > 0) {
             pin = tagSearch[1]; 
             if (receivePinCallback) setTimeout(receivePinCallback, 100);
-            id = null;
-            node = null;
-
-            destroyAuthorizeUI();
+            
         }
+        id = null;
+        node = null;
+
+        destroyAuthorizeUI();
     };
 
     // shows the authorization UI
