@@ -1,4 +1,7 @@
 var Entity = require('entity');
+var playerObj = Ti.App.Properties.getObject('player', {});
+var player = new Entity.Player(playerObj);
+$.nameField.value = player.name;
 
 $.btnLaunch.addEventListener('click', function(e){
 	
@@ -8,9 +11,10 @@ $.btnLaunch.addEventListener('click', function(e){
 	//var skillNames = skillXML.getElementsByTagName("name");
 	//alert(skillNames);
 	
-	var player = new Entity.Player($.nameField.value, /*skillNames*/["HTML", "C++"]);
+	player.name = $.nameField.value;
+	player.save();
 	
-	Alloy.createController('game',player).getView().open();
+	Alloy.createController('game',{player:player,searchKey: $.searchField.value}).getView().open();
 	$.characterCreation.close();
 });
 
