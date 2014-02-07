@@ -96,10 +96,12 @@
 "#hearts" :{
 	backgroundColor: '#eee',
 	bottom:  0,
-	height: 30
+	height: 30,
+	width:  Ti.UI.SIZE
 },
 ".heart" :{
 	image:  '/images/heartEmpty.png',
 	height:  30,
-	width:  30
+	width:  30,
+	left:  15
 }
