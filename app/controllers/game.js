@@ -112,7 +112,7 @@ function Reset()
 	$.skillList.data = data;
 	$.jobTitle.text = enemies[currentEnemyIndex].name;
 	$.employerTitle.text = enemies[currentEnemyIndex].employer;
-	$.jobLocation.text = enemies[currentEnemyIndex].city + ", " + enemies[currentIndex].state;
+	$.jobLocation.text = enemies[currentEnemyIndex].city + ", " + enemies[currentEnemyIndex].state;
 }
 
 $.btnPickSkill.addEventListener('click', function(e){
