@@ -1,4 +1,4 @@
-var player = arguments[0] || {};
+var player = arguments[0] || {}, linkApi = require('linkedInAPI');
 $.nameField.value = player.name;
 
 $.btnLaunch.addEventListener('click', function(e){
@@ -19,5 +19,22 @@ $.btnLaunch.addEventListener('click', function(e){
 $.btnCancel.addEventListener('click', function(e){
 	$.characterCreation.close();
 });
+
+// THESE CALLS WRAP COMMON FUNCTIONS
+linkApi.getUser(function(_d) {
+    var obj = JSON.parse(_d);
+     Ti.API.info(obj);
+    $.nameField.value = obj.formattedName;
+    player.name = $.nameField.value;
+    player.save();
+    //Alloy.createController('game',player).getView().open();
+	//$.characterCreation.close();
+});
+
+Alloy.Globals.liCall = function() {
+    linkApi.getUser(function(_d) {
+        Ti.API.info(_d);
+    });
+};
 
 $.characterCreation.open();
