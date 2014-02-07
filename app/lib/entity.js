@@ -5,7 +5,7 @@ function Entity(name)
 
 var Player = function(obj){
 	Entity.call(this, obj.name || '');
-	this.skills = obj.skills || ["HTML", "C++", 'PHP', 'CSS', 'JavaScript'];
+	this.skills = obj.skills || ["HTML", "Java", 'PHP', 'CSS', 'JavaScript'];
 	this.xp = obj.xp || 0;
 };
 

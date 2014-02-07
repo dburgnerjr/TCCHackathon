@@ -35,6 +35,7 @@ var linkedInModule = {};
         xhr.open('GET', a.signed_url);
         xhr.setRequestHeader('Authorization', a.header);
         xhr.setRequestHeader('Content-Type', 'text/xml;charset=UTF-8');
+        xhr.setRequestHeader('x-li-format', 'json');
         xhr.send();
     }
 
@@ -42,7 +43,7 @@ var linkedInModule = {};
         var e = adapter.loadAccessToken('linkedin');
         Ti.API.info(e);
         g(OAuthSimple().sign({
-            path: 'https://api.linkedin.com/v1/people/~',
+            path: 'https://api.linkedin.com/v1/people/~:(picture-url,formatted-name,headline)',
             action: 'GET',
             signatures: {
                 consumer_key: apiKey,

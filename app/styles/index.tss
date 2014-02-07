@@ -4,14 +4,9 @@
 	exitOnClose: true,
 	navBarHidden: true
 },
-"Button": {
-	width: 100,
-	height: 40,,
-	backgroundColor: 'red',
-	borderRadius: 5,
-	color: "#fff"
-},
-"#btnNewGame": {
-	bottom: 175,
-	right: 20 
+"#buttonContainer": {
+	width:120,
+	height: 100,
+	right: 10,
+	layout: 'vertical'
 }
