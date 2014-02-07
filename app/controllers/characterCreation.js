@@ -1,6 +1,4 @@
-var Entity = require('entity');
-var playerObj = Ti.App.Properties.getObject('player', {});
-var player = new Entity.Player(playerObj);
+var player = arguments[0] || {};
 $.nameField.value = player.name;
 
 $.btnLaunch.addEventListener('click', function(e){
