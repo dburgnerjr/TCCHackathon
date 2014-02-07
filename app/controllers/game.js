@@ -1,14 +1,9 @@
-var args = arguments[0] || {};
-var animation = require('alloy/animation');
-
-var Entity = require('entity');
-
-var player = args;
-
-var enemies = [];
-var turn = 0;
-
-var currentEnemyIndex = -1,
+var player = arguments[0] || {},
+	animation = require('alloy/animation'),
+	Entity = require('entity'),
+	enemies = [],
+	turn = 0,
+	currentEnemyIndex = -1,
 	numHearts = 0,
 	numSkulls = 0;
 
@@ -48,16 +43,12 @@ function resetButtons () {
 }
 
 function onAttackClick(e){
-	animation.shake($.jobCard);
 	var result = player.useSkill($.btnPickSkill.title, enemies[currentEnemyIndex]);
-	
-	if(result > 0)
-	{
+	if(result > 0){
 		SkillSuccessful();
 	}
-	//Unsuccessful attack
-	else
-	{
+	else{
+		//Unsuccessful attack
 		SkillUnsuccessful();
 	}
 	resetButtons();
@@ -65,10 +56,10 @@ function onAttackClick(e){
 }
 
 function SkillSuccessful(){
+	animation.shake($.jobCard);
 	numHearts++;
 	$.hearts.children[turn].image = '/images/heart.png';
-	if(numHearts >= 3)
-	{
+	if(numHearts >= 3){
 		EnemyDefeated();
 		Reset();
 	}
@@ -80,10 +71,10 @@ function EnemyDefeated(){
 
 
 function SkillUnsuccessful(){
+	animation.flash($.jobCard);
 	numSkulls++;
 	$.hearts.children[turn].image = '/images/skull.png';
-	if(numSkulls >= 3)
-	{
+	if(numSkulls >= 3){
 		EnemyVictory();
 		Reset();
 	}
@@ -110,9 +101,10 @@ function Reset()
 	});
 	//Update table
 	$.skillList.data = data;
+	Ti.API.info('enemydesc', enemies[currentEnemyIndex].description);
 	$.jobTitle.text = enemies[currentEnemyIndex].name;
 	$.employerTitle.text = enemies[currentEnemyIndex].employer;
-	$.jobLocation.text = enemies[currentEnemyIndex].city + ", " + enemies[currentIndex].state;
+	$.jobLocation.text = enemies[currentEnemyIndex].city + ", " + enemies[currentEnemyIndex].state;
 }
 
 $.btnPickSkill.addEventListener('click', function(e){
