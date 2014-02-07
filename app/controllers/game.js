@@ -47,10 +47,6 @@ function resetButtons () {
 
 function onAttackClick(e){
 	$.skillList.deleteRow(currentRow);
-	Ti.API.info("Using Skill");
-	Ti.API.info("Skill: ", $.btnPickSkill.title);
-	Ti.API.info("CurrentEnemyIndex: ", currentEnemyIndex);
-	Ti.API.info("Enemy: ", enemies[currentEnemyIndex].name);
 	if(player.useSkill($.btnPickSkill.title, enemies[currentEnemyIndex])){
 		SkillSuccessful();
 	}
