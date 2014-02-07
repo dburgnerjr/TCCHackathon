@@ -4,15 +4,12 @@ var Entity = require('entity');
 var Spells = require('spell');
 
 var player = new Entity(args);
+player.addSpell(Spells.ThrowResumeSpell);
 var enemy = new Entity("Evil guy");
+player.addSpell(Spells.ThrowApplicationSpell);
 
 function onAttackClick(e){
-	
-	e.source.backgroundImage = "images/attackPrs.jpg";
-	
 	player.attack(enemy);
-	
-	e.source.backgroundImage = "images/attackBtn.jpg";
 	
 	setTimeout(enemyTurn, 500);
 }
