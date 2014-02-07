@@ -18,10 +18,16 @@ Player.prototype.updateXp = function(change) {
 	this.xp += change;
 	this.save();
 };
+
 Player.prototype.useSkill = function(skill, target)
-{
-	Ti.API.info('Enemy desc', target.description);
-	return target.description.match(skill) ? 1 : -1;
+{	
+	Ti.API.info("Skill: ", skill.toLowerCase());
+	Ti.API.info("Target: ", target.name || "No name");
+	Ti.API.info("Description: ", target.description || "empty");
+	var result = target.description.indexOf(skill.toLowerCase());
+	Ti.API.info("Result: ", result);
+	
+	return result != -1;
 };
 
 var Enemy = function(job_posting){
@@ -29,7 +35,7 @@ var Enemy = function(job_posting){
 	this.employer = job_posting.employer_name;
 	this.source_url = job_posting.source_url;
 	this.apply_url = job_posting.apply_url;
-	this.description = job_posting.description;
+	this.description = job_posting.description.toLowerCase();
 	this.city = job_posting.city;
 	this.state = job_posting.state;
 };

@@ -1,5 +1,6 @@
 ".container" : {
-  backgroundColor: 'brown'
+  backgroundColor: 'brown',
+  navBarHidden: true
 },
 "Button": {
 	width: 100,
@@ -17,9 +18,9 @@
 	right: 20 
 }
 "TextField": {
-	backgroundColor: 'white',
+	//backgroundColor: 'white',
 	width: "90%",
 	top: 20,
-	height: 30,
+	height: 40,
 	paddingLeft: 10
 }
