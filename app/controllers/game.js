@@ -6,6 +6,7 @@ var Entity = require('entity');
 var player = args;
 
 var enemies = [];
+var turn = 0;
 
 var currentEnemyIndex = -1,
 	numHearts = 0,
@@ -60,10 +61,12 @@ function onAttackClick(e){
 		SkillUnsuccessful();
 	}
 	resetButtons();
+	++turn;
 }
 
 function SkillSuccessful(){
 	numHearts++;
+	$.hearts.children[turn].image = '/images/heart.png';
 	if(numHearts >= 3)
 	{
 		EnemyDefeated();
@@ -78,6 +81,7 @@ function EnemyDefeated(){
 
 function SkillUnsuccessful(){
 	numSkulls++;
+	$.hearts.children[turn].image = '/images/skull.png';
 	if(numSkulls >= 3)
 	{
 		EnemyVictory();

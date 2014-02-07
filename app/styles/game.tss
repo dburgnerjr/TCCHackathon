@@ -68,8 +68,7 @@
     color: 'gray',
     font: { fontFamily:'Arial', fontSize: '14dp' },
     left: '60dp', top: '25dp'
-}
-
+},
 //Job card
 "#jobCard" : {
 	height: 200,
@@ -84,7 +83,7 @@
 	},
 	top: 10,
 	color:"#109273" 
-}
+},
 "#employerTitle" :{
 	font: {
 		fontSize: 18,
@@ -92,7 +91,7 @@
 	},
 	top: 5,
 	color:"#109273" 
-}
+},
 "#jobLocation" :{
 	font: {
 		fontSize: 16,
@@ -100,4 +99,16 @@
 	},
 	top: 15,
 	color: "#109273"
+},
+"#hearts" :{
+	backgroundColor: '#eee',
+	bottom:  0,
+	height: 30,
+	width:  Ti.UI.SIZE
+},
+".heart" :{
+	image:  '/images/heartEmpty.png',
+	height:  30,
+	width:  30,
+	left:  15
 }
