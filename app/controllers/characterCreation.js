@@ -31,10 +31,4 @@ linkApi.getUser(function(_d) {
 	//$.characterCreation.close();
 });
 
-Alloy.Globals.liCall = function() {
-    linkApi.getUser(function(_d) {
-        Ti.API.info(_d);
-    });
-};
-
 $.characterCreation.open();
