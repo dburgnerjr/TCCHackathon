@@ -4,7 +4,8 @@ var Entity = require('entity'),
 		width: 100,
 		height: 40,
 		top: 10,
-		backgroundColor: 'red',
+		backgroundImage: '/images/blankBtn.png',
+		backgroundSelcetedImage: '/images/blankPrs.png',
 		borderRadius: 5,
 		color: "#fff",
 		title: ''
@@ -33,7 +34,7 @@ else {
 	buttonClass.title = "Create Profile";
 	var btnUpdate = Ti.UI.createButton(buttonClass);
 	btnUpdate.addEventListener('click', function(e){
-		Alloy.createController('characterCreation', profile).getView().open();
+		Alloy.createController('characterCreation', player).getView().open();
 	});
 	$.buttonContainer.add(btnUpdate);
 }

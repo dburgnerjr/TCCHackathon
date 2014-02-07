@@ -8,7 +8,9 @@
 	height: Ti.UI.SIZE
 },
 "Button": {
-	color: "#fff"
+	color: "#fff",
+	backgroundImage: '/images/blankBtn.png',
+	backgroundSelectedImage: '/images/blankPrs.png'
 },
 "#gameContainer": {
 	zIndex: 1,
@@ -37,22 +39,18 @@
 		height: "40%",
 		width: "45%",
 		touchEnabled: false,
-		backgroundImage: "/images/attackBtn.png",
-		backgroundSelectedImage: "/images/attackPrs.png"
 },
 "#btnPickSkill": {
 		top: "10",
 		left: 15,
 		height: "40%",
 		width: "42%",
-		//backgroundColor: 'green'
-		backgroundImage: "/images/defendBtn.png",
-		backgroundSelectedImage: "/images/defendPrs.png"
 }
 "#skillList": {
 	top: "70%",
 	height: "69%",
 	zIndex: 10,
+	backgroundColor: "#FFF"
 }
 //Job card
 "#jobCard" : {
@@ -123,7 +121,6 @@
 	bottom: 5,
 	width: 100,
 	height: 30,
-	backgroundColor: 'red',
 	borderRadius: 3
 },
 "#playerInfo" : {
