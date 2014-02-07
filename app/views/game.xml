@@ -1,23 +1,32 @@
 <Alloy>
 	<Window class="container">
 		<View id="gameContainer">
+			<View id="postingstats">
+				<Label id="availLbl">Available Jobs: </Label>
+				<Label id="availableJobs"></Label>
+			</View>
 			<View id="jobCard" layout="vertical">
 				<Label id="jobTitle">Software Engineer II</Label>
 				<Label id="employerTitle">ForRent.Com</Label>
 				<Label id="jobLocation">Norfolk, VA</Label>
 			</View>
 			<View id="hearts" layout="horizontal">
-				<ImageView id="heart1" class="heart"></ImageView>
+				<ImageView id="heart1" class="heart first"></ImageView>
 				<ImageView id="heart2" class="heart"></ImageView>
 				<ImageView id="heart3" class="heart"></ImageView>
 				<ImageView id="heart4" class="heart"></ImageView>
 				<ImageView id="heart5" class="heart"></ImageView>
 			</View>
+			<Button id="btnSkipJob">Skip Job</Button>
 		</View>
 		<View id="sep" />
 		<View id="actionsContainer">
 			<Button id="btnPickSkill" title="Pick a Skill" />
 			<Button id="btnAttack" title="Attack" />
+			<View id="playerInfo">
+				<Label id="playerName"></Label>
+				<Label id="xp">XP: 0</Label>
+			</View>
 			<!--<Button id="btnDefend" title="Attack"/> -->
 		</View>
 		<TableView id="skillList">

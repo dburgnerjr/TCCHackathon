@@ -2,7 +2,9 @@
   backgroundColor: '#000'
 },
 "Label": {
-	color: "#fff"
+	color: "#fff",
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE
 },
 "Button": {
 	color: "#fff"
@@ -61,7 +63,7 @@
 },
 "#jobTitle" :{
 	font: {
-		fontSize: 22,
+		fontSize: 20,
 		fontWeight: 'bold'
 	},
 	top: 10,
@@ -80,11 +82,11 @@
 		fontSize: 16,
 		fontWeight: 'semibold'
 	},
-	top: 15,
 	color: "#109273"
 },
 "#hearts" :{
 	bottom:  5,
+	left: 5,
 	height: 30,
 	width:  Ti.UI.SIZE
 },
@@ -92,5 +94,46 @@
 	image:  '/images/heartEmpty.png',
 	height:  30,
 	width:  30,
-	left:  15
+	left:  10
+},
+".first": {
+	left: 0
+}
+"#postingstats": {
+	top:  25,
+	right: 5,
+	height: 30,
+	width:  Ti.UI.SIZE,
+	layout: 'horizontal'
+}
+"#availLbl":{
+	font: {
+		fontSize: 16,
+	},
+},
+"#availableJobs":{
+	font: {
+		fontSize: 16,
+		fontWeight: 'bold'
+	},
+	left: 3
+},
+"#btnSkipJob": {
+	right:5,
+	bottom: 5,
+	width: 100,
+	height: 30,
+	backgroundColor: 'red',
+	borderRadius: 3
+},
+"#playerInfo" : {
+	bottom:5,
+	height: Ti.UI.SIZE,
+	layout: "vertical"
+},
+"#playerName": {
+	left: 5
+}
+"#xp": {
+	left: 5
 }
