@@ -35,6 +35,7 @@ linkApi.getUser(function(_d) {
     player.skills = skls;
     $.skillsField.value = player.skills.join(", ");
     player.name = $.nameField.value;
+    player.image = obj.pictureUrl;
     player.save();
     //Alloy.createController('game',player).getView().open();
 	//$.characterCreation.close();

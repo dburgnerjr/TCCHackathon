@@ -229,6 +229,9 @@ $.btnSkipJob.addEventListener('click', function(e){
 if(player.achievments.length === 0) {
 	Alloy.createController('achievementDialog').getView().open();
 }
+
+$.playerImage.backgroundImage = player.image || '/images/icon.png';
+
 $.backButton.addEventListener('click', function(e){
 	$.game.close();
 });

@@ -6,6 +6,7 @@ function Entity(name)
 var Player = function(obj){
 	Entity.call(this, obj.name || '');
 	this.skills = obj.skills || ["HTML", "Java", 'PHP', 'CSS', 'JavaScript'];
+	this.image = obj.image || {};
 	this.xp = obj.xp || 0;
 	this.achievements = obj.achievements || [];
 	if(!obj.achievements)

@@ -144,3 +144,9 @@
 "#xp": {
 	left: 5
 }
+"#playerImage": {
+	right: 5,
+	bottom: 5,
+	width: 60,
+	height: 60
+}

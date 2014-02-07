@@ -28,6 +28,7 @@
 				<Label id="playerName"></Label>
 				<Label id="xp">XP: 0</Label>
 			</View>
+			<ImageView id="playerImage"></ImageView>
 			<!--<Button id="btnDefend" title="Attack"/> -->
 		</View>
 		<TableView id="skillList">

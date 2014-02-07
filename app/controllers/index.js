@@ -48,8 +48,9 @@ $.btnExit.addEventListener('click', function(e){
 });
 */
 
-var mediaPlayer = Titanium.Media.createMusicPlayer('/audio/beethoven.mp3');
+//var mediaPlayer = Titanium.Media.createMusicPlayer('/audio/beethoven.mp3');
 
-mediaPlayer.play();
+//mediaPlayer.play(); 
+
 
 $.index.open();
