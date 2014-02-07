@@ -54,7 +54,7 @@ function onAttackClick(e){
 		SkillUnsuccessful();
 	}
 	resetButtons();
-	++turn;
+	turn++;
 }
 
 function SkillSuccessful(){
