@@ -13,7 +13,7 @@ $.btnLaunch.addEventListener('click', function(e){
 	player.name = $.nameField.value;
 	player.save();
 	
-	Alloy.createController('game',player).getView().open();
+	Alloy.createController('game',{player:player,searchKey: $.searchField.value}).getView().open();
 	$.characterCreation.close();
 });
 

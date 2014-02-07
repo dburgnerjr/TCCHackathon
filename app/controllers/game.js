@@ -1,4 +1,6 @@
-var player = arguments[0] || {},
+var args = arguments[0] || {},
+	player = args.player || {},
+	searchWord = args.searchKey || "",
 	animation = require('alloy/animation'),
 	Entity = require('entity'),
 	enemies = [],
@@ -12,7 +14,8 @@ $.xp.text = 'XP: '+ player.xp;
 
 loadEnemies();
 function loadEnemies() {
-	var url = "https://quasar-9.herokuapp.com/api/v1/job_postings?auth_token=1pSst1P7LAQBzNGc2bgW&site_of_origin=EG&q=java&employer_id=1526";
+	//Create url pulling from Employment Guide with supplied keyword
+	var url = "https://quasar-9.herokuapp.com/api/v1/job_postings?auth_token=1pSst1P7LAQBzNGc2bgW&site_of_origin=EG&q=" + searchWord;
 	var client = Ti.Network.createHTTPClient({
     	 // function called when the response data is available
 	     onload : function(e) {
@@ -39,14 +42,16 @@ function loadEnemies() {
 
 function resetButtons () {
 	$.btnAttack.touchEnabled = false;
-	$.btnAttack.backgroundColor = "#999";
 	$.btnPickSkill.title = "Pick a Skill";
 }
 
 function onAttackClick(e){
 	$.skillList.deleteRow(currentRow);
-	var result = player.useSkill($.btnPickSkill.title, enemies[currentEnemyIndex]);
-	if(result > 0){
+	Ti.API.info("Using Skill");
+	Ti.API.info("Skill: ", $.btnPickSkill.title);
+	Ti.API.info("CurrentEnemyIndex: ", currentEnemyIndex);
+	Ti.API.info("Enemy: ", enemies[currentEnemyIndex].name);
+	if(player.useSkill($.btnPickSkill.title, enemies[currentEnemyIndex])){
 		SkillSuccessful();
 	}
 	else{
@@ -54,13 +59,13 @@ function onAttackClick(e){
 		SkillUnsuccessful();
 	}
 	resetButtons();
-	turn++;
 }
 
 function SkillSuccessful(){
 	animation.flash($.jobCard);
 	numHearts++;
 	$.hearts.children[turn].image = '/images/heart.png';
+	++turn;
 	if(numHearts >= 3){
 		EnemyDefeated();
 	}
@@ -70,6 +75,19 @@ function EnemyDefeated(){
 	updateXP(100-(numSkulls*30));
 	//Launch URL for player to apply to the position.
 	
+	var dialog = Ti.UI.createAlertDialog({
+	    message: "Would you like to apply for this position?",
+	    cancel: 1,
+    	buttonNames: ['Yes', 'No'],
+	    title: 'Apply?'
+	 });
+	dialog.addEventListener('click', function(e){
+		if (e.index === 0){
+			Titanium.Platform.openURL(enemies[currentEnemyIndex].apply_url);
+		}
+	});
+	dialog.show();
+	
 	Reset();
 }
 
@@ -78,6 +96,7 @@ function SkillUnsuccessful(){
 	animation.shake($.jobCard);
 	numSkulls++;
 	$.hearts.children[turn].image = '/images/skull.png';
+	++turn;
 	if(numSkulls >= 3){
 		EnemyVictory();
 	}
@@ -97,7 +116,7 @@ function updateXP(change){
 
 function Reset()
 {
-	currentEnemyIndex = Math.floor(Math.random()*enemies.length);
+	currentEnemyIndex = Math.floor(Math.random()*(enemies.length - 1));
 	
 	var data = [];
 	//Iterate player skills and create table rows
@@ -151,13 +170,14 @@ $.btnSkipJob.addEventListener('click', function(e){
 		    cancel: 0,
     		buttonNames: ['Cancel', 'OK'],
 		    title: 'Skip Game'
-		  }).show();
+		 });
 		dialog.addEventListener('click', function(e){
 			if (e.index === 1){
 				updateXP(-50);
 			  	Reset();
 			}
 		});
+		dialog.show();
 	}
 	else {
 		Reset();
