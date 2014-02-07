@@ -1,13 +1,12 @@
 var Entity = require('entity'),
 	player = {},
 	buttonClass= {
-		width: 100,
+		width: 160,
 		height: 40,
 		top: 10,
-		backgroundColor: 'red',
+		backgroundColor: '#4fa2d9',
 		borderRadius: 5,
-		color: "#fff",
-		title: ''
+		color: "#fff"
 	};
 if(Ti.App.Properties.hasProperty('player')){
 	playerObj = Ti.App.Properties.getObject('player', {}),
@@ -31,7 +30,13 @@ if(Ti.App.Properties.hasProperty('player')){
 else {
 	player = new Entity.Player({});
 	buttonClass.title = "Create Profile";
-	var btnUpdate = Ti.UI.createButton(buttonClass);
+	var btnUpdate = Ti.UI.createButton({
+		width: 160,
+		height: 40,
+		top: 10,
+		backgroundImage: '/images/linkedin-button.png',
+		borderRadius: 5,
+	});
 	btnUpdate.addEventListener('click', function(e){
 		Alloy.createController('characterCreation', player).getView().open();
 	});

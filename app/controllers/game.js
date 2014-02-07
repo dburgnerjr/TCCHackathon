@@ -83,7 +83,11 @@ function EnemyDefeated(){
 	 });
 	dialog.addEventListener('click', function(e){
 		if (e.index === 0){
-			Titanium.Platform.openURL(enemies[currentEnemyIndex].apply_url);
+			var idx = currentEnemyIndex;
+			var win = Alloy.createController('jobwebview', enemies[idx]).getView();
+			win.open({
+				modal: true
+			});
 		}
 	});
 	dialog.show();

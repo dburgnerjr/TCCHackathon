@@ -1,0 +1,10 @@
+<Alloy>
+	<NavigationWindow>
+		<Window id="win" class="container">
+			<LeftNavButton>
+				<Button id="close">close</Button>
+			</LeftNavButton>
+			<WebView id="webview" url="http://google.com"></WebView>
+		</Window>
+	</NavigationWindow>
+</Alloy>

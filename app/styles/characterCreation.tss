@@ -28,9 +28,12 @@
 	right: 20 
 }
 "TextField": {
-	//backgroundColor: 'white',
+	
 	width: "90%",
 	top: 20,
 	height: 40,
 	paddingLeft: 10
+}
+"TextField[platform:ios]": {
+	backgroundColor: 'white'
 }
