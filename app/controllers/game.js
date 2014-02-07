@@ -1,33 +1,33 @@
 var args = arguments[0] || {};
 
 var Entity = require('entity');
-var Spells = require('spell');
 
-var player = new Entity(args);
-player.addSpell(Spells.ThrowResumeSpell);
-var enemy = new Entity("Evil guy");
-player.addSpell(Spells.ThrowApplicationSpell);
+var player = args;
+
+$.skillList.data = player.skills;
 
 function onAttackClick(e){
-	player.attack(enemy);
-	
-	setTimeout(enemyTurn, 500);
+	var result = player.useSkill(e.row.title);
+	//Successful attack
+	if(result > 0)
+	{
+		SkillSuccessful();
+	}
+	//Unsuccessful attack
+	else
+	{
+		SkillUnsuccessful();
+	}
 }
 
-function onDefendClick(e){
+function SkillSuccessful(){
 	
-	e.source.backgroundImage = "images/defendPrs.jpg";
-	
-	player.defend();
-	
-	e.source.backgroundImage = "images/defendBtn.jpg";
-	
-	setTimeout(enemyTurn, 500);
 }
 
-function enemyTurn(){
-	enemy.act(player);
+function SkillUnsuccessful(){
+	
 }
+
 $.btnPickSkill.addEventListener('click', function(e){
 	$.skillList.animate({
 		top: 20,
@@ -44,5 +44,3 @@ $.skillList.addEventListener('click', function(e){
 	$.btnAttack.backgroundColor = 'red';
 });
 $.btnAttack.addEventListener('click', onAttackClick);
-//$.btnDefend.addEventListener('click', onDefendClick);
-$.pb.show();
