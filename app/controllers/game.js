@@ -7,7 +7,9 @@ var args = arguments[0] || {},
 	turn = 0,
 	currentEnemyIndex = -1,
 	numHearts = 0,
-	numSkulls = 0;
+	numSkulls = 0,
+	enemyDefeats = 0,
+	playerDefeats = 0;
 
 $.playerName.text = player.name;
 $.xp.text = 'XP: '+ player.xp;
@@ -47,10 +49,6 @@ function resetButtons () {
 
 function onAttackClick(e){
 	$.skillList.deleteRow(currentRow);
-	Ti.API.info("Using Skill");
-	Ti.API.info("Skill: ", $.btnPickSkill.title);
-	Ti.API.info("CurrentEnemyIndex: ", currentEnemyIndex);
-	Ti.API.info("Enemy: ", enemies[currentEnemyIndex].name);
 	if(player.useSkill($.btnPickSkill.title, enemies[currentEnemyIndex])){
 		SkillSuccessful();
 	}
@@ -73,8 +71,10 @@ function SkillSuccessful(){
 
 function EnemyDefeated(){
 	updateXP(100-(numSkulls*30));
-	//Launch URL for player to apply to the position.
 	
+	enemyDefeats++;
+	
+	//Launch URL for player to apply to the position	
 	var dialog = Ti.UI.createAlertDialog({
 	    message: "Would you like to apply for this position?",
 	    cancel: 1,
@@ -88,6 +88,11 @@ function EnemyDefeated(){
 			win.open({
 				modal: true
 			});
+			
+			if(!player.hasAchievement("First Application"))
+			{
+				player.addAchievement("First Application");
+			}
 		}
 	});
 	dialog.show();
@@ -108,9 +113,18 @@ function SkillUnsuccessful(){
 
 function EnemyVictory(){
 	updateXP((numHearts*30)-100);
+	
+	playerDefeats++;
+	
+	var dialog = Ti.UI.createAlertDialog({
+	    message: 'You lost, try a different position.',
+	    cancel: 1,
+    	buttonNames: ['OK'],
+	    title: 'You lost'
+	 });
+	dialog.show();
+		
 	Reset();
-	//Do stuff if player is defeated.
-	//Show URL for player to view job description?
 }
 
 function updateXP(change){
@@ -118,8 +132,33 @@ function updateXP(change){
 	$.xp.text = "XP: "+player.xp;
 }
 
+function checkAchievements(){
+	if(enemyDefeats === 1 && !player.hasAchievement("First Win"))
+	{
+		player.addAchievement("First Win");
+	}
+	if(enemyDefeats === 5 && !player.hasAchivement("Five Wins"))
+	{
+		player.addAchievement("Five Wins");
+	}
+	if(playerDefeats === 1 && !player.hasAchievement("First Loss"))
+	{
+		player.addAchivement("First Loss");
+	}
+	if(playerDefeats === 5 && !player.hasAchievement("Five Losses"))
+	{
+		player.addAchivement("Five Losses");
+	}
+	if(player.xp >= 500 && !player.hasAchivement("500 XP"))
+	{
+		player.addAchievement("500 XP");
+	}
+}
+
 function Reset()
 {
+	checkAchievements();
+	
 	currentEnemyIndex = Math.floor(Math.random()*(enemies.length - 1));
 	
 	var data = [];
