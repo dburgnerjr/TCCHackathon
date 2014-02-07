@@ -26,6 +26,7 @@
 	height: "30%",
 	width: Ti.UI.FILL,
 	backgroundImage: '/images/wallText.png'
+
 },
 "#btnAttack": {
 		top: 10,
@@ -33,27 +34,18 @@
 		height: "40%",
 		width: "45%",
 		backgroundColor: '#999',
-		touchEnabled: false
-		//backgroundImage: "/images/attackBtn.png",
-		//backgroundSelectedImage: "/images/attackPrs.png"
-},
-"#btnDefend": {
-		top: "10",
-		left: 15,
-		height: "40%",
-		width: "90%",
-		backgroundColor: 'green'
-		//backgroundImage: "/images/defendBtn.png",
-		//backgroundSelectedImage: "/images/defendPrs.png"
+		touchEnabled: false,
+		backgroundImage: "/images/attackBtn.png",
+		backgroundSelectedImage: "/images/attackPrs.png"
 },
 "#btnPickSkill": {
 		top: "10",
 		left: 15,
 		height: "40%",
 		width: "42%",
-		backgroundColor: 'green'
-		//backgroundImage: "/images/defendBtn.png",
-		//backgroundSelectedImage: "/images/defendPrs.png"
+		//backgroundColor: 'green'
+		backgroundImage: "/images/defendBtn.png",
+		backgroundSelectedImage: "/images/defendPrs.png"
 }
 "#pb": {
 	

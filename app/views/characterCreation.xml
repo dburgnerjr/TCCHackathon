@@ -1,7 +1,7 @@
 <Alloy>
 	<Window class="container">
 		<Label id="charName" top="10">Character Name</Label>
-		<TextField id="nameField" top="40" length="250"></TextField>
+		<TextField id="nameField" top="40" width="250"></TextField>
 		<Button id="btnLaunch" title="New Game" top="100"></Button>
 		<Button id="btnCancel" title="Cancel" top="170"></Button>
 	</Window>
