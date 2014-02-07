@@ -89,10 +89,10 @@ function EnemyDefeated(){
 				modal: true
 			});
 			
-			if(!player.hasAchievement("First Application"))
+			/*if(!player.hasAchievement("First Application"))
 			{
 				player.addAchievement("First Application");
-			}
+			} */
 		}
 	});
 	dialog.show();
@@ -132,7 +132,7 @@ function updateXP(change){
 	$.xp.text = "XP: "+player.xp;
 }
 
-function checkAchievements(){
+/*function checkAchievements(){
 	if(enemyDefeats === 1 && !player.hasAchievement("First Win"))
 	{
 		player.addAchievement("First Win");
@@ -153,11 +153,11 @@ function checkAchievements(){
 	{
 		player.addAchievement("500 XP");
 	}
-}
+} */
 
 function Reset()
 {
-	checkAchievements();
+	//checkAchievements();
 	
 	currentEnemyIndex = Math.floor(Math.random()*(enemies.length - 1));
 	

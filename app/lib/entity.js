@@ -8,11 +8,11 @@ var Player = function(obj){
 	this.skills = obj.skills || ["HTML", "Java", 'PHP', 'CSS', 'JavaScript'];
 	this.image = obj.image || {};
 	this.xp = obj.xp || 0;
-	this.achievements = obj.achievements || [];
+	/*this.achievements = obj.achievements || [];
 	if(!obj.achievements)
 	{
 		this.addAchievement("Noob Alert");
-	}
+	}*/
 };
 
 Player.prototype = Object.create(Entity.prototype);
@@ -27,16 +27,11 @@ Player.prototype.updateXp = function(change) {
 
 Player.prototype.useSkill = function(skill, target)
 {	
-	Ti.API.info("Skill: ", skill.toLowerCase());
-	Ti.API.info("Target: ", target.name || "No name");
-	Ti.API.info("Description: ", target.description || "empty");
 	var result = target.description.indexOf(skill.toLowerCase());
-	Ti.API.info("Result: ", result);
-	
 	return result != -1;
 };
 
-Player.prototype.addAchievement = function(achievementName)
+/*Player.prototype.addAchievement = function(achievementName)
 {
 	this.achievements.push(achievementName);
 };
@@ -55,7 +50,7 @@ Player.prototype.hasAchievement = function(achievementName)
 	}
 	
 	return match;
-};
+}; */
 
 var Enemy = function(job_posting){
 	Entity.call(this, job_posting.title);
