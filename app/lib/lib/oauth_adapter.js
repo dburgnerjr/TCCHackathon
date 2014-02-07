@@ -202,7 +202,7 @@ var OAuthAdapter = function(pConsumerSecret, pConsumerKey, pSignatureMethod)
             Ti.API.debug('destroyAuthorizeUI:webView.removeEventListener');
             webView.removeEventListener('load', authorizeUICallback);
             Ti.API.debug('destroyAuthorizeUI:window.close()');
-            window.hide();
+            window.close();
             //          Ti.API.debug('destroyAuthorizeUI:window.remove(view)');
             // window.remove(view);
             //          Ti.API.debug('destroyAuthorizeUI:view.remove(webView)');
@@ -230,7 +230,6 @@ var OAuthAdapter = function(pConsumerSecret, pConsumerKey, pSignatureMethod)
         Ti.API.info(tagSearch);
         if(tagSearch.length > 0) {
             pin = tagSearch[1]; 
-            alert(pin);
             if (receivePinCallback) setTimeout(receivePinCallback, 100);
             id = null;
             node = null;

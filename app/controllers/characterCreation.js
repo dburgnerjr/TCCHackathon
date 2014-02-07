@@ -1,5 +1,6 @@
 var player = arguments[0] || {}, linkApi = require('linkedInAPI');
 $.nameField.value = player.name;
+$.skillsField.value = player.skills.join(", ");
 
 $.btnLaunch.addEventListener('click', function(e){
 	
@@ -25,6 +26,14 @@ linkApi.getUser(function(_d) {
     var obj = JSON.parse(_d);
      Ti.API.info(obj);
     $.nameField.value = obj.formattedName;
+    var skls = [];
+    _.each(obj.skills.values, function(skill){
+    	Ti.API.info("skill", skill);
+    	skls.push(skill.skill.name);
+    });
+    
+    player.skills = skls;
+    $.skillsField.value = player.skills.join(", ");
     player.name = $.nameField.value;
     player.save();
     //Alloy.createController('game',player).getView().open();
