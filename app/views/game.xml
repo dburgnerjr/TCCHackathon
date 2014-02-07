@@ -1,12 +1,19 @@
 <Alloy>
-	<Window class="container" layout="vertical">
+	<Window class="container">
 		<View id="gameContainer">
-			<Label>Game Area</Label>
+			<ProgressBar id="pb" min="0" max="10" value="5" />
 		</View>
 		<View id="sep" />
 		<View id="actionsContainer">
-			<Button id="btnAttack" />
-			<Button id="btnDefend" />
+			<Button id="btnPickSkill" title="Pick a Skill" />
+			<Button id="btnAttack" title="Attack" />
+			<!--<Button id="btnDefend" title="Attack"/> -->
 		</View>
+		<TableView id="skillList">
+			<TableViewSection headerTitle="Your Skills">
+				<TableViewRow title="Apple"/>
+            	<TableViewRow title="Bananas"/>
+			</TableViewSection>
+		</TableView>
 	</Window>
 </Alloy>

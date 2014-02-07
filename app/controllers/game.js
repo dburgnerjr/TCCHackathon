@@ -28,6 +28,21 @@ function onDefendClick(e){
 function enemyTurn(){
 	enemy.act(player);
 }
-
+$.btnPickSkill.addEventListener('click', function(e){
+	$.skillList.animate({
+		top: 20,
+		duration: 300
+	});
+});
+$.skillList.addEventListener('click', function(e){
+	$.skillList.animate({
+		top: "70%",
+		duration: 300
+	});
+	$.btnPickSkill.title = e.row.title;
+	$.btnAttack.touchEnabled = true;
+	$.btnAttack.backgroundColor = 'red';
+});
 $.btnAttack.addEventListener('click', onAttackClick);
-$.btnDefend.addEventListener('click', onDefendClick);
+//$.btnDefend.addEventListener('click', onDefendClick);
+$.pb.show();
