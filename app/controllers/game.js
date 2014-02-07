@@ -6,15 +6,23 @@ var Entity = require('entity');
 var player = args;
 Ti.API.info(player.skills);
 var data = [];
+//Iterate player skills and create table rows
 _.each(player.skills, function(skill){
 	var row = Ti.UI.createTableViewRow({
 		title: skill
 	});
 	data.push(row);
 });
+//Update table
 $.skillList.data = data;
 
 var enemies = [];
+
+loadEnemies();
+
+var currentEnemyIndex = 0;
+var numHearts = 0;
+var numSkulls = 0;
 
 function loadEnemies() {
 	var url = "https://quasar-9.herokuapp.com/api/v1/job_postings?auth_token=1pSst1P7LAQBzNGc2bgW&site_of_origin=EG&q=java&employer_id=1526";
@@ -23,7 +31,7 @@ function loadEnemies() {
 	     onload : function(e) {
     	     var json = JSON.parse(this.responseText);
     	     for (var i = 0; i < json.job_postings.length; i++) {
-    	     	enemies.push(new Entity.parse(json.job_postings[i]));
+    	     	enemies.push(new Entity.Enemy(json.job_postings[i]));
     	     }
 	     },
     	 // function called when an error occurs, including a timeout
@@ -47,7 +55,6 @@ function resetButtons () {
 function onAttackClick(e){
 	animation.shake($.jobCard);
 	var result = player.useSkill($.btnPickSkill.title, enemies[currentEnemyIndex]);
-	//Successful attack
 	if(result > 0)
 	{
 		SkillSuccessful();
@@ -61,11 +68,38 @@ function onAttackClick(e){
 }
 
 function SkillSuccessful(){
-	
+	numHearts++;
+	if(numHearts >= 3)
+	{
+		EnemyDefeated();
+		Reset();
+	}
+}
+
+function EnemyDefeated(){
+	//Launch URL for player to apply to the position.
 }
 
 
 function SkillUnsuccessful(){
+	numSkulls++;
+	if(numSkulls >= 3)
+	{
+		EnemyVictory();
+		Reset();
+	}
+}
+
+function EnemyVictory(){
+	//Do stuff if player is defeated.
+	//Show URL for player to view description?
+}
+
+function Reset()
+{
+	currentEnemyIndex++;
+	numSkulls = 0;
+	numHearts = 0;
 	
 }
 
