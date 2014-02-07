@@ -5,8 +5,8 @@
 	navBarHidden: true
 },
 "#buttonContainer": {
-	width:120,
+	width:170,
 	height: 100,
-	right: 10,
+	top: 280,
 	layout: 'vertical'
 }
