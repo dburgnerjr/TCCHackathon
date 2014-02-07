@@ -8,6 +8,8 @@
 	color: "#fff"
 },
 "#gameContainer": {
+	zIndex: 1,
+	top: 0,
 	height: "69%",
 	width: Ti.UI.FILL,
 	backgroundImage: 'images/floorText.png',
@@ -19,6 +21,7 @@
 	borderWidth: 1
 }
 "#actionsContainer": {
+	zIndex: 100,
 	bottom: 0,
 	height: "30%",
 	width: Ti.UI.FILL,
@@ -30,14 +33,48 @@
 		left: 15,
 		height: "40%",
 		width: "90%",
-		backgroundColor: "transparent",
-		backgroundImage: "images/attackBtn.jpg"
+		backgroundColor: '#999',
+		touchEnabled: false
+		//backgroundImage: "images/attackBtn.png",
+		//backgroundSelectedImage: "images/attackPrs.png"
 },
 "#btnDefend": {
 		top: "10",
 		left: 15,
 		height: "40%",
 		width: "90%",
-		backgroundColor: "transparent",
-		backgroundImage: "images/defendBtn.jpg"
+		backgroundColor: 'green'
+		//backgroundImage: "images/defendBtn.png",
+		//backgroundSelectedImage: "images/defendPrs.png"
+},
+"#btnPickSkill": {
+		top: "10",
+		left: 15,
+		height: "40%",
+		width: "90%",
+		backgroundColor: 'green'
+		//backgroundImage: "images/defendBtn.png",
+		//backgroundSelectedImage: "images/defendPrs.png"
+}
+"#pb": {
+	
+}
+"#skillList": {
+	top: "70%",
+	height: "69%",
+	zIndex: 10,
+}
+//ListItem
+"#icon" : {
+    width: '50dp', height: '50dp', left: 0
+},
+"#title" : {
+    color: 'black',
+    font: { fontFamily:'Arial', fontSize: '20dp', fontWeight:'bold' },
+    left: '60dp', top: 0
+},
+"#subtitle" : {
+    color: 'gray',
+    font: { fontFamily:'Arial', fontSize: '14dp' },
+    left: '60dp', top: '25dp'
 }

@@ -1,6 +1,6 @@
 ".container": {
 	backgroundColor:"white",
-	backgroundImage: 'images/gameBG.jpg',
+	backgroundImage: 'images/titleScreen.png',
 	exitOnClose: true
 },
 "Button": {
