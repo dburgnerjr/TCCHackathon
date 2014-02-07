@@ -27,7 +27,7 @@ var linkedInModule = {};
 
         xhr.onerror = function (a) {
             Ti.API.error(JSON.stringify(a)), b && b(xhr.responseText)
-        }
+        };
 
         Ti.API.info('signed_url=' + a.signed_url);
         Ti.API.info('header=' + a.header);
@@ -43,7 +43,7 @@ var linkedInModule = {};
         var e = adapter.loadAccessToken('linkedin');
         Ti.API.info(e);
         g(OAuthSimple().sign({
-            path: 'https://api.linkedin.com/v1/people/~:(picture-url,formatted-name,headline)',
+            path: 'https://api.linkedin.com/v1/people/~:(picture-url,formatted-name,headline,skills)',
             action: 'GET',
             signatures: {
                 consumer_key: apiKey,

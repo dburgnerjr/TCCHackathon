@@ -34,7 +34,7 @@ else {
 	buttonClass.title = "Create Profile";
 	var btnUpdate = Ti.UI.createButton(buttonClass);
 	btnUpdate.addEventListener('click', function(e){
-		Alloy.createController('characterCreation', profile).getView().open();
+		Alloy.createController('characterCreation', player).getView().open();
 	});
 	$.buttonContainer.add(btnUpdate);
 }
