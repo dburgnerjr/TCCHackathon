@@ -137,7 +137,7 @@ function updateXP(change){
 	{
 		player.addAchievement("First Win");
 	}
-	if(enemyDefeats === 5 && !player.hasAchivement("Five Wins"))
+	if(enemyDefeats === 5 && !player.hasAchievement("Five Wins"))
 	{
 		player.addAchievement("Five Wins");
 	}
@@ -149,7 +149,7 @@ function updateXP(change){
 	{
 		player.addAchivement("Five Losses");
 	}
-	if(player.xp >= 500 && !player.hasAchivement("500 XP"))
+	if(player.xp >= 500 && !player.hasAchievement("500 XP"))
 	{
 		player.addAchievement("500 XP");
 	}
@@ -226,7 +226,7 @@ $.btnSkipJob.addEventListener('click', function(e){
 	
 });
 
-if(player.achievments.length === 0) {
+if(player.achievements.length === 0) {
 	Alloy.createController('achievementDialog').getView().open();
 }
 

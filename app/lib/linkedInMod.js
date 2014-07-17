@@ -1,4 +1,5 @@
 var linkedInModule = {};
+alert('In LinkedInMod');
 (function () {
     function auth(callback) {
         adapter.loadAccessToken('linkedin');

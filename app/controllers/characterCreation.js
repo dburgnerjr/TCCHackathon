@@ -1,4 +1,5 @@
 var player = arguments[0] || {}, linkApi = require('linkedInAPI');
+alert('In character creation ' + linkApi);
 $.nameField.value = player.name;
 $.skillsField.value = player.skills.join(", ");
 

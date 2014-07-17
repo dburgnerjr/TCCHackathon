@@ -8,7 +8,7 @@
  
 */
 var linkedInModule = require('linkedInMod');
-
+alert('In LinkedIn API');
 //
 // MUST INITIALIZE WITH KEYS
 // GET KEYS AT https://developer.linkedin.com/apis
